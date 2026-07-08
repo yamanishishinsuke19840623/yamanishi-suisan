@@ -44,8 +44,6 @@ nav.scrolled{background:rgba(8,8,14,.96);padding:1rem 3rem;border-bottom:1px sol
 .hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 #ocean-cv{position:absolute;inset:0;width:100%;height:100%}
 .hero-veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(13,31,53,.7) 0%,rgba(8,8,14,.88) 65%)}
-.fugu-bg{position:absolute;right:6%;bottom:12%;width:38vw;max-width:480px;opacity:.055;animation:fugu-float 9s ease-in-out infinite}
-@keyframes fugu-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-22px) rotate(3deg)}}
 .hero-cnt{position:relative;z-index:2;text-align:center;padding:0 2rem}
 .hero-eyebrow{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;letter-spacing:.55em;color:var(--gold);opacity:0;animation:fade-up 1s ease forwards .5s}
 .hero-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(3rem,8vw,7rem);line-height:1.1;color:var(--cream);margin:1.4rem 0;opacity:0;animation:fade-up 1.2s ease forwards .8s}
@@ -310,18 +308,6 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
 <section class="hero" id="hero">
   <canvas id="ocean-cv"></canvas>
   <div class="hero-veil"></div>
-  <svg class="fugu-bg" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="240" cy="185" rx="170" ry="120" fill="var(--cream)"/>
-    <circle cx="240" cy="185" r="168" fill="none" stroke="var(--cream)" stroke-width="1.5" stroke-dasharray="5 10"/>
-    <circle cx="240" cy="185" r="140" fill="none" stroke="var(--cream)" stroke-width=".8" stroke-dasharray="3 12"/>
-    <circle cx="330" cy="158" r="28" fill="var(--black)"/>
-    <circle cx="337" cy="151" r="9" fill="var(--cream)"/>
-    <ellipse cx="400" cy="190" rx="22" ry="13" fill="var(--black)"/>
-    <path d="M240 65 C215 28 175 5 148 38 C175 50 215 62 240 65Z" fill="var(--cream)"/>
-    <path d="M240 305 C215 342 175 360 148 328 C175 315 215 308 240 305Z" fill="var(--cream)"/>
-    <path d="M70 185 C35 173 2 148 8 123 C32 138 60 162 70 185Z" fill="var(--cream)"/>
-    <path d="M70 185 C35 197 2 222 8 247 C32 232 60 208 70 185Z" fill="var(--cream)"/>
-  </svg>
     <div class="hero-cnt">
     <p class="hero-eyebrow">Shimonoseki, Japan · Since 1879</p>
     <h1 class="hero-title">
