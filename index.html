@@ -242,6 +242,17 @@ section{padding:8rem 3rem}
 .media-name{font-family:'Shippori Mincho',serif;font-size:1.05rem;font-weight:700;margin-bottom:.7rem}
 .media-desc{font-size:.8rem;color:var(--cream-dim);line-height:1.85;font-weight:300}
 
+/* YOUTUBE GALLERY */
+.yt-sec{background:var(--deep-blue)}
+.yt-head{text-align:center;max-width:700px;margin:0 auto 4rem}
+.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.yt-card{display:block;text-decoration:none;color:inherit}
+.yt-thumb{position:relative;aspect-ratio:16/9;background-size:cover;background-position:center;overflow:hidden;border:1px solid var(--line);transition:border-color .4s}
+.yt-card:hover .yt-thumb{border-color:rgba(201,161,74,.5)}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(8,8,14,.6);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.9rem;border:1px solid rgba(201,161,74,.5);transition:transform .3s}
+.yt-card:hover .yt-play{transform:translate(-50%,-50%) scale(1.12)}
+.yt-title{font-size:.82rem;color:var(--cream-dim);line-height:1.7;margin-top:.8rem;font-weight:300}
+
 /* SHOP */
 .shop{background:var(--deep-blue);text-align:center}
 .shop-head{max-width:650px;margin:0 auto 4rem}
@@ -826,6 +837,60 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
         <div class="media-type">TV · J:COMチャンネル</div>
         <div class="media-name">ご当地人図鑑 第49回</div>
         <div class="media-desc">「下関人図鑑 第49回 山西伸典さん」として出演。安岡への思いとカオスやストリートの活動をたっぷり語りました。</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=L2VHFzR1tfw&t=112s" target="_blank" class="media-card rv" style="transition-delay:.50s">
+        <div class="media-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="19" height="13" rx="1.5"/><path d="M20 11 L25 9 L25 17 L20 15"/></svg></div>
+        <div class="media-type">TV · J:COMチャンネル</div>
+        <div class="media-name">ジモトに乾杯！居酒屋ゴリけん</div>
+        <div class="media-desc">「下関×糸島・福岡」編に出演。地元の魅力とふぐ屋の仕事を紹介しました。</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE GALLERY -->
+<section class="yt-sec" id="youtube">
+  <div class="wrap">
+    <div class="yt-head rv">
+      <div class="sec-label" style="justify-content:center">On YouTube</div>
+      <h2 class="sec-ttl">ふぐのことなら、<br>動画でも発信中。</h2>
+    </div>
+    <div class="yt-grid">
+      <a href="https://www.youtube.com/watch?v=99oDJKirV7s" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/99oDJKirV7s/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">徹底解説　ふぐのさばき方</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=J5L_8MwIA2Y" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/J5L_8MwIA2Y/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">天然とらふぐの♂♀の見分け方</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=AwbNlbIIucA" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/AwbNlbIIucA/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">【ふぐ免許】筆記試験対策　ふぐの知識編</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=ZL0cMfcbqKo" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/ZL0cMfcbqKo/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">世界一早いふぐの初競り</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=H_NA8DYGyVY" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/H_NA8DYGyVY/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">AIにふぐ屋について話してもらった結果</div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=kifjPi8wN8o" target="_blank" class="yt-card rv">
+        <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/kifjPi8wN8o/hqdefault.jpg)">
+          <div class="yt-play">▶</div>
+        </div>
+        <div class="yt-title">ふぐを炙りに</div>
       </a>
     </div>
   </div>
