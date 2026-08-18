@@ -371,6 +371,33 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
 .preloader-logo{font-family:'Shippori Mincho',serif;font-size:1.6rem;letter-spacing:.4em;color:var(--gold);opacity:0;animation:preloader-fade 1.4s ease forwards}
 @keyframes preloader-fade{0%{opacity:0;transform:translateY(10px)}30%{opacity:1;transform:none}70%{opacity:1}100%{opacity:0}}
 .preloader.hide{opacity:0;visibility:hidden;pointer-events:none}
+
+/* ===== サイドドットナビ ===== */
+.dot-nav{position:fixed;right:1.6rem;top:50%;transform:translateY(-50%);z-index:190;display:flex;flex-direction:column;gap:1rem}
+.dot-nav a{width:7px;height:7px;border-radius:50%;background:rgba(245,240,232,.28);border:1px solid rgba(201,161,74,.4);display:block;position:relative;transition:all .3s}
+.dot-nav a.active{background:var(--gold);transform:scale(1.4);box-shadow:0 0 10px rgba(201,161,74,.7)}
+.dot-nav a::before{content:attr(data-label);position:absolute;right:16px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.62rem;letter-spacing:.1em;background:rgba(8,8,14,.92);color:var(--gold);padding:.3rem .6rem;border:1px solid var(--line);opacity:0;pointer-events:none;transition:opacity .25s}
+.dot-nav a:hover::before{opacity:1}
+@media(max-width:900px){.dot-nav{display:none}}
+
+/* ===== 見出しフォーカスイン演出 =====
+   注意: clip-pathやtransform:scale()は監視対象自身に使うとIntersectionObserverの
+   交差率計算を狂わせるリスクがあるため使わない。sec-ttlは.rv/.rv-l/.rv-rの子要素で
+   自身は監視対象ではないが、念のためfilter(blur)のみで統一する。 */
+.sec-ttl{filter:blur(8px);transition:filter .8s ease}
+.rv.vis .sec-ttl,.rv-l.vis .sec-ttl,.rv-r.vis .sec-ttl{filter:blur(0)}
+
+/* ===== メディア掲載ロゴのマーキー ===== */
+.media-marquee-wrap{overflow:hidden;margin-bottom:2.5rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.media-marquee-track{display:flex;width:max-content;animation:mediaMarquee 26s linear infinite}
+.media-marquee-item{display:flex;align-items:center;gap:.6rem;padding:.5rem 1.8rem;font-family:'Shippori Mincho',serif;font-size:.85rem;letter-spacing:.08em;color:var(--gold-l);white-space:nowrap}
+.media-marquee-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@keyframes mediaMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== ゴールドCTAボタンの光波シマー ===== */
+.float-cta{overflow:hidden}
+.btn-g::after,.float-cta::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:goldShimmer 3.6s ease-in-out infinite;pointer-events:none}
+@keyframes goldShimmer{0%{left:-60%}45%{left:130%}100%{left:130%}}
 </style>
 </head>
 <body>
@@ -380,6 +407,15 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
 <div id="cur"></div>
 <div id="cur-ring"></div>
 <div class="scroll-progress" id="scroll-progress"></div>
+<nav class="dot-nav" id="dot-nav">
+  <a href="#hero" data-label="トップ" class="active"></a>
+  <a href="#story" data-label="四代の歴史"></a>
+  <a href="#products" data-label="商品"></a>
+  <a href="#owner" data-label="やまちゃん"></a>
+  <a href="#vision" data-label="ビジョン"></a>
+  <a href="#shop" data-label="購入"></a>
+  <a href="#contact" data-label="お問い合わせ"></a>
+</nav>
 <a href="#shop" class="float-cta" id="float-cta"><span>商品を見る</span><span>→</span></a>
 
 <!-- NAV -->
@@ -864,6 +900,20 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
       <div class="sec-label" style="justify-content:center">Media &amp; SNS</div>
       <h2 class="sec-ttl">やまちゃんの、<br>顔が見える発信。</h2>
     </div>
+    <div class="media-marquee-wrap"><div class="media-marquee-track">
+      <span class="media-marquee-item">YouTube「下関ふぐ屋やまちゃん」</span>
+      <span class="media-marquee-item">朝日放送（ABC）朝だ！生です旅サラダ</span>
+      <span class="media-marquee-item">電通系WEBメディア ONE STORY</span>
+      <span class="media-marquee-item">Instagram @yamanishisuisan</span>
+      <span class="media-marquee-item">J:COM ご当地人図鑑</span>
+      <span class="media-marquee-item">J:COM ジモトに乾杯！</span>
+      <span class="media-marquee-item">YouTube「下関ふぐ屋やまちゃん」</span>
+      <span class="media-marquee-item">朝日放送（ABC）朝だ！生です旅サラダ</span>
+      <span class="media-marquee-item">電通系WEBメディア ONE STORY</span>
+      <span class="media-marquee-item">Instagram @yamanishisuisan</span>
+      <span class="media-marquee-item">J:COM ご当地人図鑑</span>
+      <span class="media-marquee-item">J:COM ジモトに乾杯！</span>
+    </div></div>
     <div class="media-grid">
       <a href="https://www.youtube.com/@shimofugu" target="_blank" class="media-card rv" style="transition-delay:.08s">
         <div class="media-icon">▶</div>
@@ -1281,6 +1331,25 @@ mobileMenu.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',cl
 /* REVEAL */
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');const sn=e.target.querySelector('.stat-num');if(sn&&!sn.dataset.counted){sn.dataset.counted='1';countUp(sn)}if(e.target.querySelector('.vision-step-era')&&!e.target.dataset.eraCounted){e.target.dataset.eraCounted='1';eraPreps.forEach(p=>runEraCountUp(p.spans))}}})},{threshold:.1});
 document.querySelectorAll('.rv,.rv-l,.rv-r,.gen-card,.prod-card').forEach(el=>io.observe(el));
+
+/* サイドドットナビ：現在地ハイライト */
+(function(){
+  const dotLinks=document.querySelectorAll('.dot-nav a');
+  if(!dotLinks.length)return;
+  const map={};
+  dotLinks.forEach(a=>{map[a.getAttribute('href').slice(1)]=a;});
+  const secs=Object.keys(map).map(id=>document.getElementById(id)).filter(Boolean);
+  const dotObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        dotLinks.forEach(a=>a.classList.remove('active'));
+        const link=map[e.target.id];
+        if(link)link.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+  secs.forEach(s=>dotObs.observe(s));
+})();
 </script>
 </body>
 </html>
