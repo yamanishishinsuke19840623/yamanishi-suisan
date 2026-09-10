@@ -544,6 +544,24 @@ footer .related-sites__arrow{width:18px;height:18px;flex:0 0 18px;color:var(--re
 @media(max-width:600px){footer .related-sites__grid{grid-template-columns:minmax(0,1fr);}footer a.related-sites__card{min-height:52px;padding:10px 12px;}footer .related-sites{margin:12px auto;padding:12px 0;}}
 @media(prefers-reduced-motion:reduce){footer a.related-sites__card{transition:none;}}
 </style>
+<style id="yamanishi-cinematic-luxury">
+:root{--gold:#d1aa57;--gold-l:#f0d28b;--ink:#05070b;--deep-blue:#091827;--cream:#f7f2e8;--lux-ease:cubic-bezier(.16,1,.3,1)}
+body{background:radial-gradient(circle at 78% 8%,#10253a 0,transparent 34rem),var(--ink)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(560px circle at var(--lux-x,70%) var(--lux-y,24%),#d1aa5713,transparent 62%)}
+section{position:relative;padding-block:clamp(7rem,10vw,11rem)}
+section:not(.hero):not(.stats-sec)::before{content:"";position:absolute;top:0;left:max(2rem,calc((100vw - 1200px)/2));right:max(2rem,calc((100vw - 1200px)/2));height:1px;background:linear-gradient(90deg,transparent,#d1aa574d,transparent);transform:scaleX(.2);opacity:0;transition:transform 1.6s var(--lux-ease),opacity 1s}
+section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relative;z-index:1}.sec-label{letter-spacing:.62em}.sec-ttl{font-weight:600;letter-spacing:.08em;text-wrap:balance;text-shadow:0 12px 44px #0006}
+.hero{min-height:760px;isolation:isolate;justify-content:flex-start}.hero>img{transform:scale(1.045);filter:saturate(.86) contrast(1.08) brightness(.84);animation:luxHeroDrift 18s ease-in-out infinite alternate}@keyframes luxHeroDrift{to{transform:scale(1.105) translate3d(-1.2%,.8%,0)}}
+.hero-veil{background:linear-gradient(90deg,#03060aee 0%,#04080db3 48%,#04080d33 76%),linear-gradient(0deg,#03060aee 0%,transparent 52%,#03060a70 100%)}
+.hero::before{content:"";position:absolute;z-index:2;inset:clamp(5.5rem,8vw,8rem) clamp(1.5rem,5vw,5rem) clamp(2.2rem,5vw,4rem);border:1px solid #f0d28b2e;border-left-color:#f0d28b9e;pointer-events:none;transform:scaleY(.72);opacity:0;animation:luxFrameIn 1.8s var(--lux-ease) .35s forwards}.hero::after{content:"1879 — SHIMONOSEKI";position:absolute;right:clamp(2.2rem,6vw,6rem);top:50%;z-index:3;writing-mode:vertical-rl;font:italic 300 .68rem/1 'Cormorant Garamond',serif;letter-spacing:.48em;color:#f0d28bbf;transform:translateY(-50%);opacity:0;animation:luxFade 1.2s ease 1.4s forwards}@keyframes luxFrameIn{to{transform:scaleY(1);opacity:1}}@keyframes luxFade{to{opacity:1}}
+.hero-cnt{width:min(740px,72vw);margin-left:max(6vw,calc((100vw - 1200px)/2));padding:0;text-align:left}.hero-eyebrow{display:flex;align-items:center;gap:1.2rem}.hero-eyebrow::before{content:"";width:clamp(36px,6vw,86px);height:1px;background:linear-gradient(90deg,var(--gold-l),transparent)}.hero-title{font-size:clamp(4.2rem,8.8vw,8.2rem);line-height:.98;margin:1.7rem 0 1.5rem;text-shadow:0 20px 70px #000b}.hero-title em{font-size:.19em;letter-spacing:.55em;margin:0 0 1.35rem .25em}.hero-sub{margin:0 0 1.35rem;max-width:560px}.hero-tag{margin:0 0 1.5rem}.hero-btns{justify-content:flex-start}.btn-g,.btn-o{min-width:190px;text-align:center}.btn-g{box-shadow:0 16px 44px #d1aa5729}
+.stats-sec{padding:5.5rem 3rem;background:linear-gradient(90deg,#071421,#10283b 48%,#071421)}.stat-box{background:#050a119e;backdrop-filter:blur(8px)}
+.prod-grid{gap:clamp(.8rem,1.6vw,1.5rem)}.prod-card{border:1px solid #f0d28b1f;box-shadow:0 24px 65px #0005;transition:transform .6s var(--lux-ease),border-color .4s,box-shadow .6s var(--lux-ease)}.prod-card:nth-child(2),.prod-card:nth-child(5){transform:translateY(2rem)}.prod-card:hover{border-color:#f0d28b8a;box-shadow:0 34px 90px #0009}.prod-ov{background:linear-gradient(to top,#03060afa 18%,#03060a9e 48%,#03060a0d 82%);padding:clamp(1.35rem,2.2vw,2.15rem)}
+.shop-card,.media-card,.gen-card{border-color:#d1aa5733;background:linear-gradient(145deg,#10283b80,#05070bbd);box-shadow:0 22px 56px #0003}.owner::after,.vision::after{content:"";position:absolute;width:42vw;height:42vw;max-width:620px;max-height:620px;border-radius:50%;filter:blur(90px);background:#12415b21;pointer-events:none}.owner::after{right:-18vw;top:15%}.vision::after{left:-18vw;bottom:8%}footer .related-sites__card{box-shadow:none!important}
+@media(max-width:900px){.hero{min-height:680px}.hero-cnt{width:auto;margin:0 clamp(1.5rem,6vw,3rem);padding-top:3rem}.hero::after{display:none}.hero-title{font-size:clamp(3.5rem,13vw,6.4rem)}.prod-card:nth-child(2),.prod-card:nth-child(5){transform:none}}
+@media(max-width:600px){section{padding-block:6.2rem}.hero{height:100svh;min-height:650px}.hero>img{object-position:62% 35%!important}.hero::before{inset:5.4rem 1rem 1.2rem}.hero-cnt{margin:0 1.65rem;padding-top:2.4rem}.hero-title{font-size:clamp(3.25rem,18vw,5rem)}.hero-title em{font-size:.2em;letter-spacing:.32em;line-height:1.8}.hero-sub{font-size:.9rem}.hero-tag{font-size:.63rem;line-height:1.8;letter-spacing:.2em}.hero-btns{gap:.7rem}.btn-g,.btn-o{min-width:0;flex:1;padding:.9rem .65rem;letter-spacing:.15em}.scroll-ind{right:1.6rem;left:auto;transform:none}.stats-sec{padding:4.5rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.hero>img{transform:none!important}section:not(.hero):not(.stats-sec)::before{transform:scaleX(1);opacity:1}}
+</style>
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preloader-logo">山西水産</div></div>
@@ -1576,5 +1594,6 @@ document.querySelectorAll('.btn-g,.btn-o,.float-cta').forEach(btn=>{
   });
 });
 </script>
+<script id="yamanishi-cinematic-motion">(()=>{const r=matchMedia('(prefers-reduced-motion: reduce)').matches,s=document.querySelectorAll('section:not(.hero)');if(r){s.forEach(x=>x.classList.add('lux-visible'));return}const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('lux-visible')}),{threshold:.08});s.forEach(x=>o.observe(x));let a=0;addEventListener('pointermove',e=>{if(a)return;a=requestAnimationFrame(()=>{document.body.style.setProperty('--lux-x',e.clientX+'px');document.body.style.setProperty('--lux-y',e.clientY+'px');a=0})},{passive:true})})();</script>
 </body>
 </html>
