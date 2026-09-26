@@ -374,6 +374,15 @@ section{padding:8rem 3rem}
 .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(8,8,14,.6);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.9rem;border:1px solid rgba(201,161,74,.5);transition:transform .3s}
 .yt-card:hover .yt-play{transform:translate(-50%,-50%) scale(1.12);animation:yt-pulse 1.3s ease-in-out infinite}
 @keyframes yt-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,161,74,.45)}50%{box-shadow:0 0 0 10px rgba(201,161,74,0)}}
+.yt-short{display:flex;align-items:center;gap:2.4rem;max-width:760px;margin:0 auto 3.2rem;text-decoration:none;color:inherit}
+.yt-short[hidden]{display:none}
+.yt-short-thumb{position:relative;flex:0 0 200px;aspect-ratio:9/16;background:url(https://i.ytimg.com/vi/b7izYrhLsf0/oardefault.jpg) center/cover,linear-gradient(160deg,#1a2238,#08080e);border:1px solid rgba(201,161,74,.5);overflow:hidden}
+.yt-short-body{flex:1}
+.yt-short-tag{display:inline-block;font-size:.7rem;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(201,161,74,.5);padding:.3rem .8rem;margin-bottom:1rem}
+.yt-short-ttl{font-size:1.2rem;line-height:1.7;margin:0 0 1rem}
+.yt-short-link{font-size:.85rem;color:var(--gold)}
+.yt-short:hover .yt-play{transform:translate(-50%,-50%) scale(1.12)}
+@media(max-width:700px){.yt-short{flex-direction:column;text-align:center;gap:1.4rem}.yt-short-thumb{flex-basis:auto;width:180px}}
 .yt-title{font-size:.82rem;color:var(--cream-dim);line-height:1.7;margin-top:.8rem;font-weight:300}
 
 /* SHOP */
@@ -1128,6 +1137,15 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
       <div class="sec-label" style="justify-content:center">On YouTube</div>
       <h2 class="sec-ttl">ふぐのことなら、<br>動画でも発信中。</h2>
     </div>
+    <a href="https://www.youtube.com/shorts/b7izYrhLsf0" target="_blank" class="yt-short" id="ytShortNew" hidden>
+      <div class="yt-short-thumb"><div class="yt-play">▶</div></div>
+      <div class="yt-short-body">
+        <span class="yt-short-tag">NEW SHORTS</span>
+        <p class="yt-short-ttl">最新のショート動画を公開しました。</p>
+        <span class="yt-short-link">YouTubeで見る &rarr;</span>
+      </div>
+    </a>
+    <script>(function(){var el=document.getElementById("ytShortNew");if(el&&Date.now()>=Date.parse("2026-10-02T20:00:00+09:00"))el.hidden=false;})();</script>
     <div class="yt-grid">
       <a href="https://www.youtube.com/watch?v=99oDJKirV7s" target="_blank" class="yt-card rv">
         <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/99oDJKirV7s/hqdefault.jpg)">
