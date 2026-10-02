@@ -623,6 +623,26 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
 @media(max-width:600px){#tide-canvas{opacity:0}#tide-canvas.on{opacity:.5}.hero-eyebrow{letter-spacing:.28em!important;font-size:.7rem}.hero-title em{letter-spacing:.14em!important;font-size:.2em}.hero-btns{flex-direction:row;align-items:stretch}.hero-cnt{padding-top:1rem}.tide-band{padding:1.5rem 0}.tide-band span{gap:1.8rem;padding-right:1.8rem}}
 @media(prefers-reduced-motion:reduce){.tide-band-track{animation:none}}
 </style>
+<style id="yamanishi-reel">
+/* SHOWREEL：ショート動画を大画面で（ヒーロー直下） */
+.reel-sec{background:#04070c;overflow:hidden;padding-block:clamp(4rem,7vw,6.5rem)}
+.reel-bg{position:absolute;inset:-10%;background:url(https://i.ytimg.com/vi/b7izYrhLsf0/oardefault.jpg) center/cover;filter:blur(60px) saturate(1.2) brightness(.45);opacity:.7;transform:scale(1.1)}
+.reel-sec::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 70% at 62% 50%,rgba(209,170,87,.16),transparent 70%),linear-gradient(90deg,#04070cee 0%,#04070c66 45%,#04070c99 100%)}
+.reel-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.reel-copy{order:-1}
+.reel-txt{font-family:'Shippori Mincho',serif;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--cream-dim);letter-spacing:.12em;line-height:2;margin-bottom:2.2rem}
+.reel-frame{position:relative;height:min(86vh,860px);aspect-ratio:9/16;border:1px solid rgba(240,210,139,.45);box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 80px rgba(209,170,87,.18);overflow:hidden;background:#08080e}
+.reel-frame::before{content:"";position:absolute;inset:-1px;z-index:3;pointer-events:none;border:1px solid transparent;background:linear-gradient(135deg,#f0d28b,transparent 30%,transparent 70%,#d1aa57) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.reel-poster{position:absolute;inset:0;background:url(https://i.ytimg.com/vi/b7izYrhLsf0/oardefault.jpg) center/cover}
+.reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;opacity:0;transition:opacity 1s ease}
+.reel-frame iframe.on{opacity:1}
+@media(max-width:900px){
+  .reel-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .reel-copy{order:0}
+  .reel-copy .sec-label{justify-content:center}.reel-copy .gold-bar{margin-inline:auto}
+  .reel-frame{height:auto;width:min(100%,460px)}
+}
+</style>
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preloader-logo">山西水産</div></div>
@@ -634,6 +654,7 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
 <div class="scroll-pct" id="scroll-pct">0%</div>
 <nav class="dot-nav" id="dot-nav">
   <a href="#hero" data-label="トップ" class="active"></a>
+  <a href="#reel" data-label="動画"></a>
   <a href="#story" data-label="四代の歴史"></a>
   <a href="#products" data-label="商品"></a>
   <a href="#owner" data-label="やまちゃん"></a>
@@ -686,6 +707,24 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
     </div>
   </div>
   <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- SHOWREEL：ショート動画を大画面で -->
+<section class="reel-sec" id="reel">
+  <div class="reel-bg" aria-hidden="true"></div>
+  <div class="wrap reel-grid">
+    <div class="reel-frame rv">
+      <div class="reel-poster" aria-hidden="true"></div>
+      <iframe data-src="https://www.youtube-nocookie.com/embed/b7izYrhLsf0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=b7izYrhLsf0&amp;playsinline=1&amp;controls=0&amp;rel=0&amp;modestbranding=1" title="山西水産 ショート動画" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="reel-copy rv-l">
+      <div class="sec-label">Showreel</div>
+      <h2 class="sec-ttl">下関では、<br>ふぐを「ふく」と呼ぶ。</h2>
+      <div class="gold-bar"></div>
+      <p class="reel-txt">不遇ではなく、福を届けたいから。</p>
+      <a href="https://www.youtube.com/shorts/b7izYrhLsf0" target="_blank" rel="noopener" class="btn-o reel-btn">音ありでYouTubeで見る →</a>
+    </div>
+  </div>
 </section>
 
 <!-- STATS -->
@@ -1194,15 +1233,6 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
       <div class="sec-label" style="justify-content:center">On YouTube</div>
       <h2 class="sec-ttl">ふぐのことなら、<br>動画でも発信中。</h2>
     </div>
-    <a href="https://www.youtube.com/shorts/b7izYrhLsf0" target="_blank" class="yt-short" id="ytShortNew" hidden>
-      <div class="yt-short-thumb"><div class="yt-play">▶</div></div>
-      <div class="yt-short-body">
-        <span class="yt-short-tag">NEW SHORTS</span>
-        <p class="yt-short-ttl">最新のショート動画を公開しました。</p>
-        <span class="yt-short-link">YouTubeで見る &rarr;</span>
-      </div>
-    </a>
-    <script>(function(){var el=document.getElementById("ytShortNew");if(el&&Date.now()>=Date.parse("2026-10-02T20:00:00+09:00"))el.hidden=false;})();</script>
     <div class="yt-grid">
       <a href="https://www.youtube.com/watch?v=99oDJKirV7s" target="_blank" class="yt-card rv">
         <div class="yt-thumb" style="background-image:url(https://i.ytimg.com/vi/99oDJKirV7s/hqdefault.jpg)">
@@ -1776,6 +1806,13 @@ document.querySelectorAll('.btn-g,.btn-o,.float-cta').forEach(btn=>{
     });
   }
 })();
+</script>
+<script id="yamanishi-reel-load">
+/* 動画は画面に近づいてから読み込む（初期表示を重くしない） */
+(()=>{const f=document.querySelector('.reel-frame iframe');if(!f)return;
+const go=()=>{if(f.src)return;f.addEventListener('load',()=>setTimeout(()=>f.classList.add('on'),600),{once:true});f.src=f.dataset.src};
+if(!('IntersectionObserver'in window))return go();
+const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();o.disconnect()}},{rootMargin:'400px 0px'});o.observe(f);})();
 </script>
 </body>
 </html>
