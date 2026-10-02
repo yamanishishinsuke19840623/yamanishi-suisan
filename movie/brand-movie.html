@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山西水産 ブランドムービー</title>
+<meta name="description" content="明治12年（1879年）創業、下関ふぐ老舗問屋・山西水産の20秒ブランドムービー。LPに掲載している実写と事実だけで構成し、映像と音はこのページのコードが生成しています。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04070c;--gold:#d1aa57;--gold-l:#f0d28b;--cream:#f7f2e8;--sub:rgba(247,242,232,.6);--line:rgba(209,170,87,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Noto Sans JP',sans-serif;line-height:1.8;min-height:100vh}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:18px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:'Shippori Mincho',serif;font-weight:700;letter-spacing:.3em;color:var(--gold);text-decoration:none}
+.back{font-size:12px;color:var(--sub);text-decoration:none}
+.stage{position:relative;margin:24px auto 0;aspect-ratio:16/9;width:100%;background:#000;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.vertical .stage{aspect-ratio:9/16;width:min(100%,calc(80vh * 9 / 16))}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(4,7,12,.45);border:0;color:var(--cream);cursor:pointer;font:inherit;transition:opacity .4s}
+.play .circle{width:84px;height:84px;border-radius:50%;border:1px solid var(--gold-l);color:var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:26px;padding-left:5px;backdrop-filter:blur(6px)}
+.play .lbl{font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.4em;font-size:13px;color:var(--gold-l)}
+.play.hidden{opacity:0;pointer-events:none}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{border:1px solid var(--line);background:none;color:var(--cream);font:inherit;font-size:13px;padding:8px 16px;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--gold);color:var(--gold-l)}
+section{padding:40px 0 10px}
+h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:14px;letter-spacing:.4em;color:var(--gold);margin-bottom:12px}
+.facts{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.facts li{border-left:1px solid var(--gold);padding:2px 0 2px 12px;font-size:13px}
+.facts .src{display:block;font-size:11px;color:var(--sub)}
+p.note{font-size:13px;color:var(--sub);max-width:760px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;font-size:11px;color:var(--sub)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="../">山西水産</a><a class="back" href="../">← サイトへ戻る</a></div></header>
+<main class="wrap">
+  <div class="stage">
+    <canvas id="cv" width="1920" height="1080"></canvas>
+    <button class="play" id="playBtn" type="button" aria-label="音ありで再生"><span class="circle">▶</span><span class="lbl">BRAND MOVIE · SOUND ON</span></button>
+  </div>
+  <div class="controls">
+    <button class="btn" id="replayBtn" type="button">↺ もう一度</button>
+    <a class="btn" id="mp4Link" href="brand-movie-16x9.mp4">▶ MP4で見る</a>
+    <a class="btn" id="fmtLink" href="?format=vertical">縦型（9:16）で見る</a>
+  </div>
+  <section>
+    <h2>Facts used</h2>
+    <p class="note" style="margin-bottom:14px">映像の言葉・数字は、山西水産LP（lp.yamanisi.co.jp）に掲載済みの内容だけを使っています。写真もLP掲載の実写です。</p>
+    <ul class="facts">
+      <li>明治12年（1879年）創業・147年<span class="src">LP ヒーロー／歴史</span></li>
+      <li>南風泊市場は、世界で唯一ふぐに特化した卸売市場<span class="src">LP「なぜ、下関なのか。」</span></li>
+      <li>産地直結の鮮度／147年の職人技<span class="src">LP「三つの約束」</span></li>
+      <li>下関では「ふぐ」を「ふく」と呼ぶ（不遇ではなく福）<span class="src">LP ショーリール／テーマソング</span></li>
+      <li>四代の系譜：1879・1949・1972・2011<span class="src">LP「四代の歴史」</span></li>
+      <li>ふぐ刺し（薄造り）・てっちり鍋セット・ふぐの唐揚げ<span class="src">LP 商品</span></li>
+      <li>「本場の海から、あなたの食卓へ。」「変わり続けることが、続いてきた理由。」<span class="src">LP コピー</span></li>
+    </ul>
+  </section>
+</main>
+<footer><div class="wrap">© 山西水産株式会社 · 山口県下関市富任町1-1-5</div></footer>
+
+<script>
+(() => {
+'use strict';
+const V = new URLSearchParams(location.search).get('format') === 'vertical';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080, FPS = 30;
+const BPM = 90, BEAT = 60 / BPM;                         // 0.667s
+const S = [0, 4, 8, 12, 16, 20, 24, 31].map(b => b * BEAT); // 7 scenes, 20.67s
+const DUR = S[S.length - 1];
+const U = Math.min(W, H) / 1080;                         // layout unit
+const C = { bg:'#04070c', navy:'#0a1a2a', gold:'#d1aa57', goldL:'#f0d28b', cream:'#f7f2e8' };
+const MIN = "'Shippori Mincho', serif", SANS = "'Noto Sans JP', sans-serif", SERIF_EN = "'Cormorant Garamond', serif";
+
+const cv = document.getElementById('cv'); cv.width = W; cv.height = H;
+if (V) document.documentElement.classList.add('vertical');
+const ctx = cv.getContext('2d');
+
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const eOut = x => 1 - Math.pow(1 - x, 4);
+const eOutExpo = x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+const eInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+const hash = n => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
+
+// ---------- assets ----------
+const IMG = {};
+const imgReady = Promise.all(['market', 'mekiki', 'craft', 'sashimi', 'tecchiri', 'karaage', 'table', 'owner'].map(k => new Promise(res => {
+  const im = new Image(); im.onload = im.onerror = res; im.src = `src/${k}.jpg`; IMG[k] = im;
+})));
+
+// ---------- drawing helpers ----------
+function txt(s, x, y, o = {}) {
+  ctx.save();
+  ctx.font = `${o.style || ''} ${o.weight || 700} ${o.size || 80}px ${o.family || MIN}`;
+  ctx.textAlign = o.align || 'center'; ctx.textBaseline = o.base || 'middle';
+  ctx.letterSpacing = (o.ls || 0) + 'px';
+  ctx.globalAlpha *= o.alpha == null ? 1 : o.alpha;
+  if (o.gold) {
+    const m = ctx.measureText(s), h = o.size || 80;
+    const g = ctx.createLinearGradient(0, y - h * .6, 0, y + h * .6);
+    g.addColorStop(0, '#fffaf0'); g.addColorStop(.45, '#f3e3bd'); g.addColorStop(.75, C.goldL); g.addColorStop(1, '#b8893a');
+    ctx.fillStyle = g;
+  } else ctx.fillStyle = o.color || C.cream;
+  if (o.shadow) { ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 40 * U; ctx.shadowOffsetY = 10 * U; }
+  ctx.fillText(s, x, y);
+  ctx.restore();
+}
+// 文字を下からマスクで立ち上げる
+function riseText(s, x, y, p, o = {}) {
+  const h = (o.size || 80) * 1.4, e = eOut(p);
+  ctx.save(); ctx.beginPath(); ctx.rect(0, y - h / 2, W, h); ctx.clip();
+  txt(s, x, y + (1 - e) * h * .9, { ...o, alpha: (o.alpha == null ? 1 : o.alpha) * clamp(p * 3) });
+  ctx.restore();
+}
+function cover(im, x, y, w, h, zoom = 1, px = 0, py = 0, alpha = 1) {
+  if (!im || !im.naturalWidth) { ctx.fillStyle = C.navy; ctx.fillRect(x, y, w, h); return; }
+  const r = Math.max(w / im.naturalWidth, h / im.naturalHeight) * zoom;
+  const iw = im.naturalWidth * r, ih = im.naturalHeight * r;
+  ctx.save(); ctx.globalAlpha *= alpha; ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
+  ctx.drawImage(im, x + (w - iw) / 2 + px * (iw - w) / 2, y + (h - ih) / 2 + py * (ih - h) / 2, iw, ih);
+  ctx.restore();
+}
+function shade(a, dir = 'bottom') {
+  const g = dir === 'bottom' ? ctx.createLinearGradient(0, 0, 0, H) : ctx.createLinearGradient(0, 0, W, 0);
+  g.addColorStop(0, `rgba(4,7,12,${a * .35})`); g.addColorStop(.5, `rgba(4,7,12,${a * .45})`); g.addColorStop(1, `rgba(4,7,12,${a})`);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+}
+function goldLine(x1, y1, x2, y2, a = 1, lw = 1.5) {
+  ctx.save(); ctx.globalAlpha *= a; ctx.strokeStyle = C.goldL; ctx.lineWidth = lw * U;
+  ctx.shadowColor = 'rgba(240,210,139,.8)'; ctx.shadowBlur = 12 * U;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.restore();
+}
+// 金の糸の渦潮（LPヒーローと同じ双曲面のモチーフ）
+function vortex(cx, cy, R, h, t, alpha, draw = 1, N = 160) {
+  ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.lineWidth = .9 * U;
+  const k = .2, twist = 2.55;
+  for (let i = 0; i < N; i++) {
+    const a = i / N * Math.PI * 2 + t * .35, b = a + twist;
+    const x1 = cx + Math.cos(a) * R, y1 = cy - h + Math.sin(a) * R * k;
+    const x2 = cx + Math.cos(b) * R * .78, y2 = cy + h + Math.sin(b) * R * .78 * k;
+    const depth = (Math.sin(a) + Math.sin(b)) * .25 + .5;
+    const al = (.04 + depth * .3) * alpha;
+    const g = ctx.createLinearGradient(x1, y1, x2, y2);
+    g.addColorStop(0, `rgba(240,210,139,${al * .3})`); g.addColorStop(.5, `rgba(255,236,190,${al})`); g.addColorStop(1, `rgba(209,170,87,${al * .25})`);
+    ctx.strokeStyle = g;
+    const d = clamp(draw * 1.6 - i / N * .6);            // 線が順に描かれていく
+    if (d <= 0) continue;
+    const cxm = cx + (Math.cos(a) + Math.cos(b)) * R * .12, cym = cy;
+    ctx.beginPath(); ctx.moveTo(x1, y1);
+    if (d >= 1) ctx.quadraticCurveTo(cxm, cym, x2, y2);
+    else ctx.quadraticCurveTo(lerp(x1, cxm, d), lerp(y1, cym, d), lerp(x1, x2, d * d), lerp(y1, y2, d * d));
+    ctx.stroke();
+  }
+  const gl = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * .6);
+  gl.addColorStop(0, `rgba(255,230,170,${.16 * alpha})`); gl.addColorStop(1, 'rgba(255,230,170,0)');
+  ctx.fillStyle = gl; ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
+  ctx.restore();
+}
+function dust(t, alpha, seed = 1) {
+  const r = rng(seed); ctx.save(); ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < 90; i++) {
+    const x = r() * W, y0 = r() * H, sp = 10 + r() * 30, ph = r() * 6;
+    const y = (y0 - t * sp * U + H) % H, tw = .3 + .7 * Math.abs(Math.sin(t * 1.3 + ph));
+    ctx.fillStyle = `rgba(247,226,170,${alpha * tw * .5})`; ctx.fillRect(x, y, 2 * U, 2 * U);
+  }
+  ctx.restore();
+}
+function label(s, x, y, a = 1, align = 'center') { txt(s, x, y, { family: SERIF_EN, style: 'italic', weight: 400, size: 26 * U, ls: 12 * U, color: C.goldL, alpha: a, align }); }
+
+// ---------- scenes ----------
+// 01 OPEN：渦潮が描かれ、「下関」が立ち上がる
+function s1(t) {
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  const p = prog(t, 0, S[1]);
+  vortex(W / 2, H / 2, (V ? 460 : 520) * U, (V ? 520 : 330) * U, t, eOut(prog(t, .1, 1.8)), eOut(prog(t, 0, 2)));
+  dust(t, prog(t, .3, 1.5));
+  riseText('下関', W / 2, H / 2, prog(t, .9, 1.9), { size: 210 * U, weight: 800, gold: true, ls: 40 * U, shadow: true });
+  label('SHIMONOSEKI · SINCE 1879', W / 2, H / 2 + 200 * U, prog(t, 1.5, 2.2));
+  ctx.fillStyle = `rgba(4,7,12,${1 - prog(t, 0, .5)})`; ctx.fillRect(0, 0, W, H);
+}
+// 02 南風泊市場
+function s2(t) {
+  const p = prog(t, S[1], S[2]);
+  cover(IMG.market, 0, 0, W, H, 1.12 + p * .1, -.3 + p * .5, 0);
+  shade(.92);
+  const y = V ? H * .66 : H * .62;
+  label('HAEDOMARI MARKET', V ? W / 2 : 140 * U, y - 150 * U, prog(t, S[1] + .2, S[1] + .8), V ? 'center' : 'left');
+  riseText('南風泊市場', V ? W / 2 : 140 * U, y, prog(t, S[1] + .25, S[1] + 1.1), { size: 150 * U, weight: 800, gold: true, ls: 14 * U, align: V ? 'center' : 'left', shadow: true });
+  riseText('世界で唯一、ふぐに特化した卸売市場。', V ? W / 2 : 144 * U, y + 130 * U, prog(t, S[1] + .8, S[1] + 1.6), { size: 44 * U, weight: 500, ls: 6 * U, align: V ? 'center' : 'left', shadow: true });
+}
+// 03 目利きと職人技（2カット）
+function s3(t) {
+  const half = (S[2] + S[3]) / 2, first = t < half;
+  const p = first ? prog(t, S[2], half) : prog(t, half, S[3]);
+  cover(first ? IMG.mekiki : IMG.craft, 0, 0, W, H, 1.18 - p * .1, first ? .2 : -.2, 0);
+  shade(.85);
+  const words = first ? ['01', '産地直結の鮮度'] : ['02', '147年の職人技'];
+  const st = first ? S[2] : half;
+  const x = V ? W / 2 : W - 140 * U, al = V ? 'center' : 'right', y = V ? H * .72 : H * .68;
+  label(words[0], x, y - 120 * U, prog(t, st + .1, st + .5), al);
+  riseText(words[1], x, y, prog(t, st + .15, st + .8), { size: 110 * U, weight: 800, gold: true, ls: 10 * U, align: al, shadow: true });
+  if (!first && t - half < .5) { const w = prog(t, half, half + .4); goldLine(W * w, 0, W * w, H, 1 - w); }
+}
+// 04 ふぐ → ふく
+function s4(t) {
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  const lt = t - S[3], cx = W / 2, cy = H / 2 - (V ? 60 : 30) * U, sz = (V ? 300 : 280) * U;
+  vortex(cx, cy, (V ? 420 : 560) * U, (V ? 360 : 260) * U, t, .35, 1, 110);
+  // 「ふ」＋「く」
+  ctx.save(); ctx.font = `800 ${sz}px ${MIN}`; const wf = ctx.measureText('ふ').width; ctx.restore();
+  const xf = cx - wf / 2, xk = cx + wf / 2;
+  riseText('ふ', xf, cy, prog(lt, 0, .6), { size: sz, weight: 800, color: C.cream });
+  // 「ぐ」→「く」：濁点が金の粒になってほどける
+  const morph = prog(lt, 1.05, 1.45), rise2 = prog(lt, .1, .7);
+  riseText('ぐ', xk, cy, rise2, { size: sz, weight: 800, color: C.cream, alpha: 1 - morph });
+  if (morph > 0) txt('く', xk, cy, { size: sz, weight: 800, color: C.cream, alpha: morph });
+  const glow = prog(lt, .7, 1.05) * (1 - prog(lt, 1.05, 1.3));
+  const dx = xk + sz * .36, dy = cy - sz * .32;
+  if (glow > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; const g = ctx.createRadialGradient(dx, dy, 0, dx, dy, sz * .35); g.addColorStop(0, `rgba(255,230,170,${.8 * glow})`); g.addColorStop(1, 'rgba(255,230,170,0)'); ctx.fillStyle = g; ctx.fillRect(dx - sz, dy - sz, sz * 2, sz * 2); ctx.restore(); }
+  const dp = prog(lt, 1.05, 2.3);
+  if (dp > 0 && dp < 1) {
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < 70; i++) {
+      const a = -Math.PI / 2 + (hash(i) - .5) * 2.6, r = eOut(dp) * (60 + hash(i * 3) * 260) * U;
+      const x = dx + Math.cos(a) * r + (hash(i * 7) - .5) * 30 * U, y = dy + Math.sin(a) * r * .8 - dp * 90 * U;
+      ctx.fillStyle = `rgba(240,210,139,${(1 - dp) * (.5 + hash(i * 5) * .5)})`;
+      ctx.beginPath(); ctx.arc(x, y, (1.5 + hash(i * 11) * 3) * U * (1 - dp * .6), 0, 6.3); ctx.fill();
+    }
+    ctx.restore();
+  }
+  const sub = prog(lt, 1.7, 2.4);
+  riseText('下関では、ふぐを「ふく」と呼ぶ。', cx, cy + sz * .78, sub, { size: 46 * U, weight: 500, ls: 6 * U });
+  riseText('不遇ではなく、福を届けたいから。', cx, cy + sz * .78 + 72 * U, prog(lt, 2.0, 2.6), { size: 40 * U, weight: 500, ls: 6 * U, color: C.goldL });
+}
+// 05 四代・147年
+function s5(t) {
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  const lt = t - S[4];
+  const gens = [['初', '1879'], ['二', '1949'], ['三', '1972'], ['四', '2011']];
+  const n = gens.length, colW = V ? W / 4 : 300 * U, x0 = W / 2 - colW * (n - 1) / 2, cy = V ? H * .42 : H * .44;
+  gens.forEach(([k, y], i) => {
+    const p = prog(lt, .12 * i, .12 * i + .6), x = x0 + colW * i;
+    goldLine(x, cy - 190 * U, x, cy - 190 * U + 380 * U * eOut(p), .35);
+    riseText(k, x + 2, cy - 40 * U, p, { size: 130 * U, weight: 800, gold: i === 3, color: i === 3 ? null : 'rgba(247,242,232,.82)' });
+    riseText(y, x, cy + 90 * U, prog(lt, .12 * i + .2, .12 * i + .8), { family: SERIF_EN, style: 'italic', weight: 400, size: 46 * U, ls: 4 * U, color: C.goldL });
+  });
+  riseText('四代、147年。', W / 2, V ? H * .72 : H * .82, prog(lt, 1.3, 2.0), { size: 96 * U, weight: 800, gold: true, ls: 16 * U, shadow: true });
+}
+// 06 商品の速いカット → 食卓へ
+function s6(t) {
+  const lt = t - S[5], cut = Math.min(3, Math.floor(lt / BEAT));
+  const shots = [[IMG.sashimi, 'ふぐ刺し'], [IMG.tecchiri, 'てっちり'], [IMG.karaage, 'ふぐの唐揚げ'], [IMG.table, '']];
+  const p = prog(lt, cut * BEAT, (cut + 1) * BEAT);
+  cover(shots[cut][0], 0, 0, W, H, (cut === 3 ? 1.06 : 1.14) - eOut(p) * .06, 0, cut === 3 ? -.1 : 0);
+  shade(cut === 3 ? .9 : .7);
+  if (cut < 3) {
+    label(`0${cut + 1} / 03`, V ? W / 2 : 140 * U, H - (V ? 330 : 230) * U, clamp(p * 4), V ? 'center' : 'left');
+    riseText(shots[cut][1], V ? W / 2 : 140 * U, H - (V ? 230 : 140) * U, clamp(p * 2.2), { size: 88 * U, weight: 800, gold: true, ls: 10 * U, align: V ? 'center' : 'left', shadow: true });
+  } else {
+    const q = prog(lt, 3 * BEAT, 3 * BEAT + .7);
+    riseText('本場の海から、', W / 2, H / 2 - 60 * U, q, { size: 90 * U, weight: 800, ls: 10 * U, shadow: true });
+    riseText('あなたの食卓へ。', W / 2, H / 2 + 70 * U, prog(lt, 3 * BEAT + .2, 3 * BEAT + .9), { size: 90 * U, weight: 800, gold: true, ls: 10 * U, shadow: true });
+  }
+  // カットごとの金の閃光
+  const fl = 1 - clamp((lt - cut * BEAT) / .18);
+  if (cut > 0 && fl > 0) { ctx.fillStyle = `rgba(240,210,139,${fl * .35})`; ctx.fillRect(0, 0, W, H); }
+}
+// 07 ロゴ
+function s7(t) {
+  const lt = t - S[6];
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  cover(IMG.owner, 0, 0, W, H, 1.1 + lt * .01, V ? 0 : .4, -.3, .16 * (1 - prog(lt, 1.6, 2.4)));
+  vortex(W / 2, H / 2, (V ? 470 : 600) * U, (V ? 560 : 340) * U, t, .6 + .4 * prog(lt, 1.8, 2.8), 1);
+  dust(t, .8, 4);
+  const a1 = prog(lt, .1, .7) * (1 - prog(lt, 1.6, 2.0));
+  riseText('変わり続けることが、', W / 2, H / 2 - 50 * U, prog(lt, .1, .7), { size: 70 * U, weight: 700, ls: 8 * U, alpha: a1 / Math.max(.001, prog(lt, .1, .7)) });
+  riseText('続いてきた理由。', W / 2, H / 2 + 50 * U, prog(lt, .35, .95), { size: 70 * U, weight: 700, ls: 8 * U, color: C.goldL, alpha: a1 / Math.max(.001, prog(lt, .35, .95)) });
+  const lp = prog(lt, 2.1, 3.0);
+  label('MEIJI 12 · 1879 · SHIMONOSEKI', W / 2, H / 2 - 170 * U, prog(lt, 2.5, 3.1));
+  riseText('山西水産', W / 2, H / 2, lp, { size: (V ? 190 : 200) * U, weight: 800, gold: true, ls: 30 * U, shadow: true });
+  riseText('明治十二年創業　下関ふぐ老舗問屋', W / 2, H / 2 + 150 * U, prog(lt, 2.6, 3.2), { size: 38 * U, weight: 500, ls: 10 * U });
+  txt('lp.yamanisi.co.jp', W / 2, H - (V ? 170 : 90) * U, { family: SERIF_EN, style: 'italic', weight: 400, size: 30 * U, ls: 6 * U, color: C.goldL, alpha: prog(lt, 3.0, 3.6) });
+  ctx.fillStyle = `rgba(4,7,12,${prog(t, DUR - .5, DUR)})`; ctx.fillRect(0, 0, W, H);
+}
+const SCENES = [s1, s2, s3, s4, s5, s6, s7];
+
+// ---------- transitions：金の線が走って次のシーンを開く ----------
+const TR = .42;
+function transition(t, i) {
+  const p = eInOut(prog(t, S[i], S[i] + TR));
+  const vert = i % 2 === 0;
+  ctx.save();
+  ctx.beginPath();
+  if (vert) ctx.rect(0, 0, W, H * p); else ctx.rect(0, 0, W * p, H);
+  ctx.clip(); SCENES[i](t); ctx.restore();
+  if (vert) goldLine(0, H * p, W, H * p, 1 - p * .4, 2); else goldLine(W * p, 0, W * p, H, 1 - p * .4, 2);
+}
+
+// ---------- grain / vignette / HUD ----------
+const grain = [];
+(() => { const r = rng(7); for (let k = 0; k < 5; k++) { const g = document.createElement('canvas'); g.width = g.height = 256; const gx = g.getContext('2d'); const id = gx.createImageData(256, 256); for (let i = 0; i < id.data.length; i += 4) { const v = r() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 16; } gx.putImageData(id, 0, 0); grain.push(g); } })();
+function sceneIndex(t) { for (let i = S.length - 2; i >= 0; i--) if (t >= S[i]) return i; return 0; }
+function hud(t, i) {
+  const a = .75 * prog(t, .6, 1.4) * (1 - prog(t, S[6] + 1.8, S[6] + 2.2));
+  const m = (V ? 70 : 64) * U;
+  txt('YAMANISHI SUISAN', m, m, { family: SERIF_EN, style: 'italic', weight: 400, size: 22 * U, ls: 8 * U, color: C.goldL, alpha: a, align: 'left' });
+  txt(`${String(i + 1).padStart(2, '0')} / 07`, W - m, m, { family: SERIF_EN, style: 'italic', weight: 400, size: 22 * U, ls: 6 * U, color: C.goldL, alpha: a, align: 'right' });
+  ctx.save(); ctx.globalAlpha = a * .6; ctx.fillStyle = C.goldL; ctx.fillRect(m, H - m, (W - m * 2) * (t / DUR), 1.5 * U); ctx.restore();
+}
+function render(t) {
+  t = clamp(t, 0, DUR - 1e-4);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  const i = sceneIndex(t);
+  if (i > 0 && t < S[i] + TR) { SCENES[i - 1](t); transition(t, i); }
+  else SCENES[i](t);
+  ctx.save(); const f = Math.floor(t * FPS);
+  ctx.fillStyle = ctx.createPattern(grain[f % grain.length], 'repeat');
+  ctx.translate((hash(f) * 256) | 0, (hash(f + 3) * 256) | 0); ctx.fillRect(-256, -256, W + 512, H + 512); ctx.restore();
+  const v = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .4, W / 2, H / 2, Math.hypot(W, H) * .6);
+  v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.5)'); ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+  hud(t, i);
+}
+
+// ================= AUDIO（同じタイムラインで Web Audio が生成） =================
+const NOTE = n => 440 * Math.pow(2, (n - 69) / 12);
+// D♭メジャー系の静かな進行：Dbmaj7 → Bbm9 → Gbmaj7 → Ab → Fm7 → Gbmaj7 → Ab → Db
+const CHORDS = { 0: [49, 56, 60, 65], 4: [46, 53, 60, 61], 8: [42, 53, 58, 61], 12: [44, 56, 60, 63], 16: [41, 56, 60, 63], 20: [42, 53, 58, 61], 22: [44, 56, 60, 63], 24: [49, 56, 60, 65, 68] };
+function buildAudio(ac, t0, dest) {
+  const r = rng(1879);
+  const master = ac.createGain(); master.gain.value = .5;
+  const comp = ac.createDynamicsCompressor(); comp.threshold.value = -16; comp.ratio.value = 3.5;
+  master.connect(comp).connect(dest);
+  const irLen = ac.sampleRate * 3.2, ir = ac.createBuffer(2, irLen, ac.sampleRate);
+  for (let ch = 0; ch < 2; ch++) { const d = ir.getChannelData(ch); for (let i = 0; i < irLen; i++) d[i] = (r() * 2 - 1) * Math.pow(1 - i / irLen, 3.2); }
+  const verb = ac.createConvolver(); verb.buffer = ir; const vg = ac.createGain(); vg.gain.value = .45; verb.connect(vg).connect(master);
+  const noiseBuf = ac.createBuffer(1, ac.sampleRate * 2, ac.sampleRate);
+  { const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = r() * 2 - 1; }
+  const send = (node, amt) => { const g = ac.createGain(); g.gain.value = amt; node.connect(g).connect(verb); };
+  const noise = (at, dur, type, f0, f1, gain, q = 1, sv = 0) => {
+    const s = ac.createBufferSource(); s.buffer = noiseBuf; const f = ac.createBiquadFilter(); f.type = type; f.Q.value = q;
+    f.frequency.setValueAtTime(f0, at); f.frequency.exponentialRampToValueAtTime(f1, at + dur);
+    const g = ac.createGain(); g.gain.setValueAtTime(.0001, at); g.gain.exponentialRampToValueAtTime(gain, at + Math.min(.02, dur * .3)); g.gain.exponentialRampToValueAtTime(.0001, at + dur);
+    s.connect(f).connect(g).connect(master); if (sv) send(g, sv); s.start(at, r() * .5); s.stop(at + dur + .05);
+  };
+  const osc = (at, dur, type, f0, f1, gain, sv = 0, attack = .005) => {
+    const o = ac.createOscillator(); o.type = type; o.frequency.setValueAtTime(f0, at); if (f1 !== f0) o.frequency.exponentialRampToValueAtTime(f1, at + dur);
+    const g = ac.createGain(); g.gain.setValueAtTime(.0001, at); g.gain.exponentialRampToValueAtTime(gain, at + attack); g.gain.exponentialRampToValueAtTime(.0001, at + dur);
+    o.connect(g).connect(master); if (sv) send(g, sv); o.start(at); o.stop(at + dur + .05);
+  };
+  const pad = (at, dur, notes, g = .035) => notes.forEach(n => [-7, 7].forEach(det => {
+    const o = ac.createOscillator(); o.type = 'sawtooth'; o.frequency.value = NOTE(n); o.detune.value = det;
+    const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.frequency.setValueAtTime(700, at); f.frequency.linearRampToValueAtTime(1600, at + dur); f.Q.value = .4;
+    const gg = ac.createGain(); gg.gain.setValueAtTime(.0001, at); gg.gain.exponentialRampToValueAtTime(g, at + .5); gg.gain.setValueAtTime(g, at + dur - .1); gg.gain.exponentialRampToValueAtTime(.0001, at + dur + .6);
+    o.connect(f).connect(gg).connect(master); send(gg, .6); o.start(at); o.stop(at + dur + .7);
+  }));
+  const bell = (at, n, g = .08) => { osc(at, 2.2, 'sine', NOTE(n), NOTE(n), g, .9); osc(at, 1.2, 'sine', NOTE(n + 19), NOTE(n + 19), g * .25, .9); };
+  const taiko = (at, g = 1) => { osc(at, .9, 'sine', 110, 38, g, .35); noise(at, .25, 'lowpass', 900, 120, .5 * g, .7, .3); };
+  const kick = at => { osc(at, .38, 'sine', 140, 45, .7); noise(at, .02, 'highpass', 3000, 2000, .15); };
+  const hat = (at, g = .07) => noise(at, .05, 'highpass', 8500, 7500, g);
+  const swell = (at, dur, g) => { const s = ac.createBufferSource(); s.buffer = noiseBuf; s.loop = true; const f = ac.createBiquadFilter(); f.type = 'bandpass'; f.Q.value = 2.5;
+    f.frequency.setValueAtTime(250, at); f.frequency.exponentialRampToValueAtTime(7000, at + dur);
+    const gg = ac.createGain(); gg.gain.setValueAtTime(.0001, at); gg.gain.exponentialRampToValueAtTime(g, at + dur); gg.gain.linearRampToValueAtTime(0, at + dur + .03);
+    s.connect(f).connect(gg).connect(master); send(gg, .4); s.start(at); s.stop(at + dur + .05); };
+  const B = b => t0 + b * BEAT;
+  const keys = Object.keys(CHORDS).map(Number).sort((a, b) => a - b);
+  keys.forEach((k, i) => {
+    const end = i < keys.length - 1 ? keys[i + 1] : 31, ch = CHORDS[k];
+    pad(B(k), (end - k) * BEAT, ch.slice(1), k >= 24 ? .045 : .03);
+    if (k >= 4 && k < 24) for (let b = k; b < end; b++) osc(B(b), BEAT * .9, 'sine', NOTE(ch[0] - 12), NOTE(ch[0] - 12), .38, 0, .02);
+    // 琴のような分散和音
+    if (k >= 4 && k < 24) { const arp = [ch[1], ch[2], ch[3], ch[2] + 12, ch[3] + 12, ch[2] + 12]; for (let b = k, j = 0; b < end; b += .5, j++) { osc(B(b), .7, 'triangle', NOTE(arp[j % 6] + 12), NOTE(arp[j % 6] + 12), .05, .5); } }
+  });
+  // オープニング：鈴の音と低い海鳴り
+  bell(B(0), 77, .07); bell(B(1.5), 80, .05); bell(B(3), 84, .05);
+  noise(B(0), 2.6, 'lowpass', 200, 600, .25, .5, .5);
+  // シーン切替の太鼓
+  [4, 8, 12, 16, 20].forEach(b => taiko(B(b), .9));
+  for (let b = 5; b < 24; b++) { if (b % 4 !== 0) kick(B(b)); hat(B(b + .5)); if (b >= 20) hat(B(b + .25), .04); }
+  // 金の線のスウッシュ
+  [4, 8, 10, 12, 16, 20].forEach(b => noise(B(b), .45, 'bandpass', 5000, 500, .22, 2, .35));
+  // 濁点がほどける「ちりん」
+  bell(B(12) + 1.0, 89, .09); bell(B(12) + 1.12, 93, .06);
+  // 世代の刻み
+  [0, 1, 2, 3].forEach(i => bell(B(16) + .12 * i, [73, 77, 80, 85][i], .05));
+  // 商品カットのアクセント
+  [20, 21, 22].forEach(b => osc(B(b), .25, 'sine', 220, 90, .5));
+  // ロゴへ
+  swell(B(26.2), BEAT * 1.6, .3); taiko(B(27.6), 1.1); bell(B(27.6), 85, .09); bell(B(27.6), 89, .06);
+}
+async function renderAudioWav() {
+  const sr = 48000, len = Math.ceil(sr * (DUR + .01));
+  const oac = new OfflineAudioContext(2, len, sr); buildAudio(oac, 0, oac.destination);
+  const buf = await oac.startRendering(), n = buf.length, out = new DataView(new ArrayBuffer(44 + n * 4));
+  const ws = (o, s) => { for (let i = 0; i < s.length; i++) out.setUint8(o + i, s.charCodeAt(i)); };
+  ws(0, 'RIFF'); out.setUint32(4, 36 + n * 4, true); ws(8, 'WAVE'); ws(12, 'fmt '); out.setUint32(16, 16, true);
+  out.setUint16(20, 1, true); out.setUint16(22, 2, true); out.setUint32(24, sr, true); out.setUint32(28, sr * 4, true); out.setUint16(32, 4, true); out.setUint16(34, 16, true);
+  ws(36, 'data'); out.setUint32(40, n * 4, true);
+  const L = buf.getChannelData(0), R = buf.getChannelData(1), fade = Math.floor(sr * .6);
+  for (let i = 0; i < n; i++) { const f = i > n - fade ? (n - i) / fade : 1; out.setInt16(44 + i * 4, clamp(L[i] * f, -1, 1) * 32767, true); out.setInt16(46 + i * 4, clamp(R[i] * f, -1, 1) * 32767, true); }
+  const bytes = new Uint8Array(out.buffer); let s = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(s);
+}
+
+// ================= player =================
+if (V) { document.getElementById('mp4Link').href = 'brand-movie-9x16.mp4'; const f = document.getElementById('fmtLink'); f.href = '?'; f.textContent = '横型（16:9）で見る'; }
+const playBtn = document.getElementById('playBtn'), replayBtn = document.getElementById('replayBtn');
+let ac = null, start = 0, raf = 0;
+function loop() { const t = ac.currentTime - start; render(Math.max(0, t)); if (t < DUR) raf = requestAnimationFrame(loop); else { playBtn.classList.remove('hidden'); playBtn.querySelector('.lbl').textContent = 'REPLAY'; } }
+function play() {
+  cancelAnimationFrame(raf); if (ac) ac.close();
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+  ac = new (window.AudioContext || window.webkitAudioContext)(); start = ac.currentTime + .12;
+  buildAudio(ac, start, ac.destination); playBtn.classList.add('hidden'); raf = requestAnimationFrame(loop);
+}
+playBtn.addEventListener('click', play); replayBtn.addEventListener('click', play);
+const GLYPHS = '下関南風泊市場世界で唯一、ふぐに特化した卸売。産地直結の鮮度年職人技はをくと呼不遇なく福届けたいから初二三四代本海あなた食卓へ刺しちり唐揚変わり続けることが、いてきた理由山西水産明治十創業老舗問屋0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ·./';
+const fontsReady = Promise.all([`800 100px 'Shippori Mincho'`, `700 100px 'Shippori Mincho'`, `500 100px 'Shippori Mincho'`, `italic 400 100px 'Cormorant Garamond'`].map(f => document.fonts.load(f, GLYPHS))).catch(() => {});
+Promise.all([fontsReady, imgReady]).then(() => render(S[6] + 3.6));   // ポスター＝ロゴのフレーム
+window.__movie = { render, renderAudioWav, ready: Promise.all([fontsReady, imgReady, document.fonts.ready]), DUR, FPS };
+})();
+</script>
+</body>
+</html>

@@ -626,16 +626,16 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
 <style id="yamanishi-reel">
 /* SHOWREEL：ショート動画を大画面で（ヒーロー直下） */
 .reel-sec{background:#04070c;overflow:hidden;padding-block:clamp(4rem,7vw,6.5rem)}
-.reel-bg{position:absolute;inset:-10%;background:url(https://i.ytimg.com/vi/b7izYrhLsf0/oardefault.jpg) center/cover;filter:blur(60px) saturate(1.2) brightness(.45);opacity:.7;transform:scale(1.1)}
+.reel-bg{position:absolute;inset:-10%;background:url(movie/brand-movie-poster.jpg) center/cover;filter:blur(60px) saturate(1.2) brightness(.45);opacity:.7;transform:scale(1.1)}
 .reel-sec::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 70% at 62% 50%,rgba(209,170,87,.16),transparent 70%),linear-gradient(90deg,#04070cee 0%,#04070c66 45%,#04070c99 100%)}
 .reel-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:clamp(2.5rem,6vw,6rem);align-items:center}
 .reel-copy{order:-1}
 .reel-txt{font-family:'Shippori Mincho',serif;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--cream-dim);letter-spacing:.12em;line-height:2;margin-bottom:2.2rem}
 .reel-frame{position:relative;height:min(86vh,860px);aspect-ratio:9/16;border:1px solid rgba(240,210,139,.45);box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 80px rgba(209,170,87,.18);overflow:hidden;background:#08080e}
 .reel-frame::before{content:"";position:absolute;inset:-1px;z-index:3;pointer-events:none;border:1px solid transparent;background:linear-gradient(135deg,#f0d28b,transparent 30%,transparent 70%,#d1aa57) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-.reel-poster{position:absolute;inset:0;background:url(https://i.ytimg.com/vi/b7izYrhLsf0/oardefault.jpg) center/cover}
-.reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;opacity:0;transition:opacity 1s ease}
-.reel-frame iframe.on{opacity:1}
+.reel-poster{position:absolute;inset:0;background:url(movie/brand-movie-poster.jpg) center/cover}
+.reel-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;opacity:0;transition:opacity 1s ease}
+.reel-frame video.on{opacity:1}
 @media(max-width:900px){
   .reel-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
   .reel-copy{order:0}
@@ -748,14 +748,14 @@ body{counter-reset:chap}
   <div class="wrap reel-grid">
     <div class="reel-frame rv">
       <div class="reel-poster" aria-hidden="true"></div>
-      <iframe data-src="https://www.youtube-nocookie.com/embed/b7izYrhLsf0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=b7izYrhLsf0&amp;playsinline=1&amp;controls=0&amp;rel=0&amp;modestbranding=1" title="山西水産 ショート動画" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      <video muted loop playsinline preload="none" poster="movie/brand-movie-poster.jpg" data-src="movie/brand-movie-web.mp4" aria-label="山西水産 ブランドムービー（音なし）"></video>
     </div>
     <div class="reel-copy rv-l">
-      <div class="sec-label">Showreel</div>
+      <div class="sec-label">Brand Movie</div>
       <h2 class="sec-ttl">下関では、<br>ふぐを「ふく」と呼ぶ。</h2>
       <div class="gold-bar"></div>
       <p class="reel-txt">不遇ではなく、福を届けたいから。</p>
-      <a href="https://www.youtube.com/shorts/b7izYrhLsf0" target="_blank" rel="noopener" class="btn-o reel-btn">音ありでYouTubeで見る →</a>
+      <a href="movie/brand-movie-9x16.mp4" target="_blank" rel="noopener" class="btn-o reel-btn">音ありで見る →</a>
     </div>
   </div>
 </section>
@@ -1841,11 +1841,12 @@ document.querySelectorAll('.btn-g,.btn-o,.float-cta').forEach(btn=>{
 })();
 </script>
 <script id="yamanishi-reel-load">
-/* 動画は画面に近づいてから読み込む（初期表示を重くしない） */
-(()=>{const f=document.querySelector('.reel-frame iframe');if(!f)return;
-const go=()=>{if(f.src)return;f.addEventListener('load',()=>setTimeout(()=>f.classList.add('on'),600),{once:true});f.src=f.dataset.src};
+/* ブランドムービー：画面に近づいたら読み込んで再生、離れたら一時停止 */
+(()=>{const v=document.querySelector('.reel-frame video');if(!v)return;
+v.addEventListener('playing',()=>v.classList.add('on'),{once:true});
+const go=()=>{if(!v.src){v.src=v.dataset.src}v.play().catch(()=>{})};
 if(!('IntersectionObserver'in window))return go();
-const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();o.disconnect()}},{rootMargin:'400px 0px'});o.observe(f);})();
+new IntersectionObserver(e=>{if(e[0].isIntersecting)go();else if(v.src)v.pause()},{rootMargin:'300px 0px'}).observe(v);})();
 </script>
 </body>
 </html>
