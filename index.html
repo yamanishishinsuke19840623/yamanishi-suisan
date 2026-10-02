@@ -643,6 +643,39 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
   .reel-frame{height:auto;width:min(100%,460px)}
 }
 </style>
+<style id="yamanishi-polish">
+/* ===== POLISH：読みやすさ・章立て・細部の仕上げ ===== */
+/* 日本語の改行を文節単位に（単語の途中で折り返さない） */
+.sec-ttl,.sec-title,.hero-sub,.owner-quote,.story-quote,.vision-cta p,.reel-txt,.pillar-ttl,.act-ttl,.media-name,.gen-name,.prod-name{word-break:auto-phrase;text-wrap:balance}
+.sec-ttl{font-size:clamp(1.85rem,3.1vw,2.75rem);line-height:1.45}
+p,.pillar-txt,.act-txt,.media-desc,.gen-desc,.prod-desc,.vision-step-desc,.contact-note{text-wrap:pretty}
+
+/* 章番号：各セクションの見出しラベルに 01, 02… を自動で振る */
+body{counter-reset:chap}
+.sec-label::before,.sec-eyebrow::before{counter-increment:chap;content:counter(chap,decimal-leading-zero);font:500 .78rem/1 'Cormorant Garamond',serif;font-style:normal;letter-spacing:.12em;color:var(--gold-l);padding:.32rem .55rem;border:1px solid rgba(240,210,139,.35);margin-right:.2rem}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:1rem}
+
+/* 本文の可読性：細すぎ・暗すぎを解消 */
+.story-text p,.why-text p,.owner-body p,.vision-text p,.commit-head p,.activities-head p,.shop-head p,.contact-note{font-weight:400;color:rgba(247,242,232,.8);font-size:clamp(.9rem,1vw,.98rem);line-height:2.05}
+.pillar-txt,.act-txt,.media-desc,.gen-desc,.prod-desc,.vision-step-desc,.why-quote-box p,.owner-profile-list li{font-weight:400;color:rgba(247,242,232,.74)}
+.stat-lbl{color:rgba(247,242,232,.72);line-height:1.75}
+
+/* さかなさばき教室：他セクションと統一 */
+.workshop{background:linear-gradient(180deg,#05080d,#0a1a2a 60%,#05080d)!important}
+.workshop .sec-title{font-size:clamp(1.85rem,3.1vw,2.75rem)!important;margin-top:.4rem;background:linear-gradient(180deg,#fffaf0 10%,#efe2c4 70%,#d9bd82 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.workshop .wrap>div[style*="grid-template-columns"]{gap:2px!important;background:rgba(209,170,87,.18)!important;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.workshop .wrap>div[style*="grid-template-columns"] img{filter:saturate(.9) contrast(1.05)}
+@media(max-width:700px){
+  .workshop .wrap>div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  .workshop .wrap>div[style*="justify-content:space-between"]{flex-direction:column;gap:.4rem;text-align:center}
+}
+
+/* スマホ：追従ボタンを小さく、安全領域に配慮して本文にかぶりにくく */
+@media(max-width:600px){
+  .float-cta{right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));padding:.62rem 1rem;font-size:.62rem;letter-spacing:.14em;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+  .stat-lbl{font-size:.68rem}
+}
+</style>
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preloader-logo">山西水産</div></div>
@@ -1067,7 +1100,7 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
 
 
 <!-- FISH WORKSHOP GALLERY -->
-<section style="padding:5rem 0 3rem;background:var(--deep);">
+<section class="workshop" style="padding:5rem 0 3rem;background:var(--deep);">
   <div class="wrap">
     <div class="sec-hd rv" style="text-align:center;margin-bottom:3rem;">
       <span class="sec-eyebrow">WORKSHOP</span>
