@@ -541,6 +541,18 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
 .roots-text p{font-size:.9rem;line-height:2;color:var(--cream-dim);margin:0 0 1.1rem}
 .roots-text strong{color:var(--gold);font-weight:700}
 @media (max-width:900px){.roots-grid{grid-template-columns:1fr;gap:1.6rem}.roots-fig-sub{max-width:100%}}
+
+/* Company journal: scoped styles */
+#company-journal{padding:clamp(64px,8vw,112px) 0;background:var(--deep);scroll-margin-top:100px}
+#company-journal article{max-width:800px;margin:0 auto}
+#company-journal .wrap{width:calc(100% - 48px);max-width:1100px;margin:0 auto}
+#company-journal .sec-label{max-width:800px;margin:0 auto 22px}
+#company-journal .journal-title{font-family:'Shippori Mincho',serif;font-size:clamp(1.5rem,3.4vw,2.5rem);font-weight:600;line-height:1.7;overflow-wrap:anywhere}
+#company-journal .journal-body{font-size:1rem;line-height:2.1;color:var(--text,#eee9df);overflow-wrap:anywhere}
+#company-journal .journal-body p{margin:0 0 1.5em}
+#company-journal .journal-body h3{font-size:1.15rem;line-height:1.7;color:var(--gold);margin:2em 0 1em}
+#company-journal .btn-o{margin-top:12px;max-width:100%;white-space:normal;text-align:center}
+@media(max-width:700px){html,body{overflow-x:clip}}
 </style>
 <style id="related-sites-style">
 @media(max-width:600px){body>footer{padding:32px 20px;}}
@@ -1221,6 +1233,28 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
 </section>
 
 <!-- SHOP -->
+<section id="company-journal" aria-labelledby="company-journal-title">
+  <div class="wrap">
+    <div class="sec-label">山西水産の読みもの</div>
+    <article>
+      <h2 class="journal-title" id="company-journal-title">明治12年から続く山西水産。四代目が伝えたい、ふぐ屋の顔</h2>
+      <div class="gold-bar"></div>
+      <div class="journal-body"><p>ふぐを取り寄せるとき、商品写真や内容量とともに、「どんな会社が届けているのだろう」と感じることはありませんか。</p>
+<p>山西水産は、山口県下関市の会社です。明治12年（1879年）の創業から、宇之助、克己、克之助、そして伸典へと、四代にわたって家業をつないできました。</p>
+<h3>商品と一緒に、届ける人のことも</h3>
+<p>会社の歴史を知ることは、お取り寄せを楽しむ入口の一つです。山西水産の会社ページでは、四代の歩みや商品に加え、四代目・山西伸典のプロフィールを紹介しています。</p>
+<p>どんな人が家業を受け継ぎ、何を伝えようとしているのか。商品だけでは見えにくい会社の背景も、知っていただけるページを目指しています。</p>
+<h3>動画でも、ふぐ屋の仕事を発信</h3>
+<p>山西水産の会社ページからは、YouTubeの動画もご覧いただけます。文章や写真に加えて、動画を通じて会社を知っていただく入口です。</p>
+<p>歴史や人柄に触れてから商品を見ると、いつものお取り寄せにも、少し違った楽しみが生まれるかもしれません。</p>
+<h3>ご購入前は、各商品の案内をご確認ください</h3>
+<p>会社ページには、楽天市場、Yahoo!ショッピング、BASEのショップへの入口を掲載しています。気になる商品がありましたら、各販売ページで内容量、価格、配送条件、調理方法をご確認ください。</p>
+<p>ご自宅の食卓にも、大切な方への贈り物にも。まずは山西水産の歩みと、届ける人の顔を知っていただけたらうれしく思います。</p></div>
+      <a class="btn-o" href="#shop">オンラインショップのご案内へ →</a>
+    </article>
+  </div>
+</section>
+
 <section class="shop" id="shop">
   <div class="wrap">
     <div class="shop-head rv">
