@@ -397,6 +397,15 @@ section{padding:8rem 3rem}
 .yt-short-link{font-size:.85rem;color:var(--gold)}
 .yt-short:hover .yt-play{transform:translate(-50%,-50%) scale(1.12)}
 @media(max-width:700px){.yt-short{flex-direction:column;text-align:center;gap:1.4rem}.yt-short-thumb{flex-basis:auto;width:180px}}
+.yt-pv{max-width:880px;margin:0 auto 3.6rem}
+.yt-pv-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid rgba(201,161,74,.5);background:#08080e url(https://i.ytimg.com/vi/eMG0XMNcMgM/maxresdefault.jpg) center/cover;cursor:pointer;overflow:hidden}
+.yt-pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-pv-frame .yt-play{width:72px;height:72px;font-size:1.3rem}
+.yt-pv-frame:hover .yt-play{transform:translate(-50%,-50%) scale(1.12);animation:yt-pulse 1.3s ease-in-out infinite}
+.yt-pv-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+.yt-pv-ttl{font-size:1rem;color:var(--cream);letter-spacing:.05em}
+.yt-pv-ttl span{display:inline-block;font-size:.68rem;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(201,161,74,.5);padding:.2rem .7rem;margin-right:.8rem;vertical-align:middle}
+.yt-pv-link{font-size:.8rem;color:var(--gold);text-decoration:none}
 .yt-title{font-size:.82rem;color:var(--cream-dim);line-height:1.7;margin-top:.8rem;font-weight:300}
 
 /* SHOP */
@@ -1249,6 +1258,14 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
       <div class="sec-label" style="justify-content:center">On YouTube</div>
       <h2 class="sec-ttl">ふぐのことなら、<br>動画でも発信中。</h2>
     </div>
+    <div class="yt-pv rv">
+      <button type="button" class="yt-pv-frame" id="ytPv" aria-label="山西水産ブランドサイトプロモーションビデオを再生"><div class="yt-play">&#9654;</div></button>
+      <div class="yt-pv-cap">
+        <div class="yt-pv-ttl"><span>BRAND MOVIE</span>山西水産ブランドサイトプロモーションビデオ</div>
+        <a class="yt-pv-link" href="https://www.youtube.com/watch?v=eMG0XMNcMgM" target="_blank" rel="noopener">YouTubeで見る &rarr;</a>
+      </div>
+    </div>
+    <script>(function(){var b=document.getElementById("ytPv");if(!b)return;b.addEventListener("click",function(){if(b.querySelector("iframe"))return;var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/eMG0XMNcMgM?autoplay=1&rel=0&playsinline=1";f.title="山西水産ブランドサイトプロモーションビデオ";f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;b.innerHTML="";b.appendChild(f);b.style.cursor="default";});})();</script>
     <a href="https://www.youtube.com/shorts/b7izYrhLsf0" target="_blank" class="yt-short" id="ytShortNew" hidden>
       <div class="yt-short-thumb"><div class="yt-play">▶</div></div>
       <div class="yt-short-body">
