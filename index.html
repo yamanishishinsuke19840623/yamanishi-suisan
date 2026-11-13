@@ -533,7 +533,7 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
    注意: clip-pathやtransform:scale()は監視対象自身に使うとIntersectionObserverの
    交差率計算を狂わせるリスクがあるため使わない。sec-ttlは.rv/.rv-l/.rv-rの子要素で
    自身は監視対象ではないが、念のためfilter(blur)のみで統一する。 */
-.sec-ttl{filter:blur(8px);transition:filter .8s ease}
+.sec-ttl{transition:filter .8s ease} .rv:not(.vis) .sec-ttl,.rv-l:not(.vis) .sec-ttl,.rv-r:not(.vis) .sec-ttl{filter:blur(8px)}
 .rv.vis .sec-ttl,.rv-l.vis .sec-ttl,.rv-r.vis .sec-ttl{filter:blur(0)}
 
 /* ===== メディア掲載ロゴのマーキー ===== */
