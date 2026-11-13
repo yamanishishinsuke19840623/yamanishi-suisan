@@ -60,6 +60,18 @@
       "inLanguage": "ja"
     },
     {
+      "@type": "VideoObject",
+      "@id": "https://lp.yamanisi.co.jp/#brand-movie",
+      "name": "山西水産 ブランドムービー「百四十七年、ふくと生きる。」",
+      "description": "明治12年（1879年）創業、下関のふぐ老舗問屋・山西水産の30秒ブランドムービー。魚箱に並ぶふぐ、入口の木の表札、四代目の包丁仕事、パック詰めまで、147年続く仕事の現場を写真で綴ります。",
+      "thumbnailUrl": "https://lp.yamanisi.co.jp/photos/promo-30s.jpg",
+      "contentUrl": "https://lp.yamanisi.co.jp/photos/promo-30s.mp4",
+      "uploadDate": "2026-11-13T14:33:00+09:00",
+      "duration": "PT30S",
+      "inLanguage": "ja",
+      "publisher": { "@id": "https://lp.yamanisi.co.jp/#org" }
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://lp.yamanisi.co.jp/#faq",
       "mainEntity": [
@@ -69,6 +81,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "明治12年（1879年）創業、山口県下関市のふぐ専門の老舗問屋です。ふぐ専門卸売市場である南風泊（はえどまり）市場の仲卸組合員として、初代から続く『自分の目で仕入れる』スタイルでふぐを直接買い付け、自社で加工して楽天市場・Yahoo!ショッピング・Amazon・BASEなどで全国へ販売しています。ふぐの取扱比率は7割以上です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "山西水産は他のふぐ店と何が違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "明治12年から四代続く下関のふぐ問屋で、仕入れ・加工・販売までを自社で一貫して行っている点です。ふぐ専門の卸売市場である南風泊（はえどまり）市場の仲卸組合員として自ら目利きして直接買い付け、ふぐ処理施設の許可を受けた自社工場で加工します。仕入れや加工の様子をYouTube・SNSで公開しており、誰が・どこで・どうつくったふぐかを確かめてから選べます。"
           }
         },
         {
@@ -575,6 +595,26 @@ footer{background:#040408;padding:2.8rem 3rem;border-top:1px solid var(--line)}
 #company-journal .journal-body h3{font-size:1.15rem;line-height:1.7;color:var(--gold);margin:2em 0 1em}
 #company-journal .btn-o{margin-top:12px;max-width:100%;white-space:normal;text-align:center}
 @media(max-width:700px){html,body{overflow-x:clip}}
+
+/* IDENTITY（存在理由） */
+.identity{background:var(--black);padding:7rem 3rem}
+.identity-grid{display:grid;grid-template-columns:minmax(240px,340px) 1fr;gap:4.5rem;align-items:center}
+.identity-movie{position:relative}
+.identity-movie video{display:block;width:100%;aspect-ratio:9/16;background:#08080e;border:1px solid rgba(201,161,74,.5);object-fit:cover;cursor:auto}
+.identity-movie-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.9rem;font-size:.78rem;color:var(--cream-dim);letter-spacing:.06em}
+.identity-movie-cap span{font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.3em;color:var(--gold);font-size:.7rem;display:block;margin-bottom:.2rem}
+.identity-movie-cap a{color:var(--gold);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--line)}
+.identity-lead{color:var(--cream-dim);line-height:2.1;font-size:1rem;margin-bottom:2.2rem;max-width:40em}
+.identity-facts{display:grid;gap:1.3rem;margin:0 0 2.4rem}
+.identity-fact{border-left:2px solid var(--gold);padding-left:1.2rem}
+.identity-fact dt{font-size:.68rem;letter-spacing:.35em;color:var(--gold);margin-bottom:.3rem}
+.identity-fact dd{font-family:'Shippori Mincho',serif;font-size:1rem;font-weight:500;line-height:1.8;margin:0}
+.identity-for{border-top:1px solid var(--line);padding-top:1.6rem}
+.identity-for h3{font-family:'Shippori Mincho',serif;font-size:1.05rem;font-weight:700;letter-spacing:.05em;margin-bottom:.9rem}
+.identity-for ul{list-style:none;display:grid;gap:.55rem}
+.identity-for li{position:relative;padding-left:1.3rem;color:var(--cream-dim);line-height:1.8;font-size:.95rem}
+.identity-for li::before{content:"";position:absolute;left:0;top:.85em;width:.6rem;height:1px;background:var(--gold)}
+@media(max-width:900px){.identity{padding:4.5rem 1.4rem}.identity-grid{grid-template-columns:1fr;gap:2.6rem}.identity-movie{max-width:300px;margin:0 auto;width:100%}}
 </style>
 <style id="related-sites-style">
 @media(max-width:600px){body>footer{padding:32px 20px;}}
@@ -715,6 +755,43 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
         <span class="stat-num">4</span>
         <span class="stat-unit">代目</span>
         <div class="stat-lbl">現在4代目<br>山西伸典が承継</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTITY（存在理由） -->
+<section class="identity" id="identity" aria-labelledby="identity-title">
+  <div class="wrap">
+    <div class="identity-grid">
+      <div class="identity-movie rv">
+        <video controls playsinline preload="none" poster="photos/promo-30s.jpg" aria-label="山西水産 ブランドムービー（30秒）">
+          <source src="photos/promo-30s.mp4" type="video/mp4">
+        </video>
+        <div class="identity-movie-cap">
+          <div><span>BRAND MOVIE · 30sec</span>百四十七年、ふくと生きる。</div>
+          <a href="https://www.instagram.com/reel/Dfq4x8ZDMCe/" target="_blank" rel="noopener">Instagramで見る &rarr;</a>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="sec-label">Who We Are</div>
+        <h2 class="sec-ttl" id="identity-title">山西水産は、何者か。</h2>
+        <div class="gold-bar"></div>
+        <p class="identity-lead">明治12年から下関で、ふぐと生きてきた問屋です。四代目が市場で目利きし、自社の工場でさばき、顔を出してお届けする。条件で比べて選ばれる時代だからこそ、「誰が、どこで、どうつくっているか」をはっきりお見せします。</p>
+        <dl class="identity-facts">
+          <div class="identity-fact"><dt>誰が</dt><dd>四代目・山西伸典。明治12年（1879年）の創業から147年、四代続くふぐ問屋です。</dd></div>
+          <div class="identity-fact"><dt>どこで</dt><dd>山口県下関市。ふぐ専門の卸売市場・南風泊（はえどまり）市場の仲卸組合員として、直接買い付けます。</dd></div>
+          <div class="identity-fact"><dt>どうやって</dt><dd>ふぐ処理施設の許可を受けた自社工場で加工。取り扱いの7割以上がふぐです。</dd></div>
+          <div class="identity-fact"><dt>なぜ顔を出すか</dt><dd>仕入れ・加工・調理までをYouTubeやSNSで公開する「顔の見えるふぐ屋」。つくり手を確かめてから選べます。</dd></div>
+        </dl>
+        <div class="identity-for">
+          <h3>こんな条件でお探しの方に</h3>
+          <ul>
+            <li>産地とつくり手がはっきりしたふぐを贈りたい</li>
+            <li>下処理済みで、家でも手軽に本場の味を楽しみたい</li>
+            <li>のしに対応した、お歳暮・法人ギフトを探している</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1435,6 +1512,10 @@ section.lux-visible::before{transform:scaleX(1);opacity:1}.wrap{position:relativ
     <details style="border-top:1px solid var(--line);padding:1.1rem .2rem;">
       <summary style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:1.05rem;color:var(--cream);cursor:pointer;letter-spacing:.03em;">山西水産はどんな会社ですか？</summary>
       <p style="margin-top:.7rem;color:var(--cream-dim);line-height:1.9;">明治12年（1879年）創業、山口県下関市のふぐ専門の老舗問屋です。ふぐ専門卸売市場である南風泊（はえどまり）市場の仲卸組合員として、初代から続く『自分の目で仕入れる』スタイルでふぐを直接買い付け、自社で加工して楽天市場・Yahoo!ショッピング・Amazon・BASEなどで全国へ販売しています。ふぐの取扱比率は7割以上です。</p>
+    </details>
+    <details style="border-top:1px solid var(--line);padding:1.1rem .2rem;">
+      <summary style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:1.05rem;color:var(--cream);cursor:pointer;letter-spacing:.03em;">山西水産は他のふぐ店と何が違いますか？</summary>
+      <p style="margin-top:.7rem;color:var(--cream-dim);line-height:1.9;">明治12年から四代続く下関のふぐ問屋で、仕入れ・加工・販売までを自社で一貫して行っている点です。ふぐ専門の卸売市場である南風泊（はえどまり）市場の仲卸組合員として自ら目利きして直接買い付け、ふぐ処理施設の許可を受けた自社工場で加工します。仕入れや加工の様子をYouTube・SNSで公開しており、誰が・どこで・どうつくったふぐかを確かめてから選べます。</p>
     </details>
     <details style="border-top:1px solid var(--line);padding:1.1rem .2rem;">
       <summary style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:1.05rem;color:var(--cream);cursor:pointer;letter-spacing:.03em;">山西水産のふぐはどこで買えますか？</summary>
